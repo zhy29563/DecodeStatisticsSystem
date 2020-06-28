@@ -44,8 +44,8 @@
             this.MPInfoClv = new MetroFramework.Controls.MetroPanel();
             this.GBoxStatisticClv = new System.Windows.Forms.GroupBox();
             this.TLPStatisticClv = new System.Windows.Forms.TableLayoutPanel();
-            this.MTxtReadSuccess = new MetroFramework.Controls.MetroTextBox();
-            this.MTxtReadRate = new MetroFramework.Controls.MetroTextBox();
+            this.MTxtReadSingle = new MetroFramework.Controls.MetroTextBox();
+            this.MTxtReadMulti = new MetroFramework.Controls.MetroTextBox();
             this.MLReadRateClv = new MetroFramework.Controls.MetroLabel();
             this.MLReadSuccessClv = new MetroFramework.Controls.MetroLabel();
             this.MLReadFailClv = new MetroFramework.Controls.MetroLabel();
@@ -64,7 +64,7 @@
             this.GBoxRunLog.SuspendLayout();
             this.MPClv.SuspendLayout();
             this.GBoxResultClv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.MGClv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MGClv)).BeginInit();
             this.MPInfoClv.SuspendLayout();
             this.GBoxStatisticClv.SuspendLayout();
             this.TLPStatisticClv.SuspendLayout();
@@ -132,42 +132,45 @@
             this.MGClv.AllowUserToDeleteRows = false;
             this.MGClv.AllowUserToResizeRows = false;
             this.MGClv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.MGClv.BackgroundColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))), ((int) (((byte) (255)))));
+            this.MGClv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.MGClv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MGClv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.MGClv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (174)))), ((int) (((byte) (219)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))), ((int) (((byte) (255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (198)))), ((int) (((byte) (247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.MGClv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.MGClv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.MGClv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ColIndex, this.ColTime, this.ColContent});
+            this.MGClv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColIndex,
+            this.ColTime,
+            this.ColContent});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))), ((int) (((byte) (255)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (136)))), ((int) (((byte) (136)))), ((int) (((byte) (136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (198)))), ((int) (((byte) (247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.MGClv.DefaultCellStyle = dataGridViewCellStyle2;
             this.MGClv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MGClv.EnableHeadersVisualStyles = false;
             this.MGClv.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.MGClv.GridColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))), ((int) (((byte) (255)))));
+            this.MGClv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.MGClv.Location = new System.Drawing.Point(5, 21);
             this.MGClv.MultiSelect = false;
             this.MGClv.Name = "MGClv";
             this.MGClv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (174)))), ((int) (((byte) (219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))), ((int) (((byte) (255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (198)))), ((int) (((byte) (247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.MGClv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.MGClv.RowHeadersVisible = false;
@@ -232,8 +235,8 @@
             this.TLPStatisticClv.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TLPStatisticClv.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.TLPStatisticClv.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TLPStatisticClv.Controls.Add(this.MTxtReadSuccess, 1, 0);
-            this.TLPStatisticClv.Controls.Add(this.MTxtReadRate, 3, 1);
+            this.TLPStatisticClv.Controls.Add(this.MTxtReadSingle, 1, 0);
+            this.TLPStatisticClv.Controls.Add(this.MTxtReadMulti, 3, 1);
             this.TLPStatisticClv.Controls.Add(this.MLReadRateClv, 2, 1);
             this.TLPStatisticClv.Controls.Add(this.MLReadSuccessClv, 0, 0);
             this.TLPStatisticClv.Controls.Add(this.MLReadFailClv, 2, 0);
@@ -249,71 +252,73 @@
             this.TLPStatisticClv.Size = new System.Drawing.Size(719, 55);
             this.TLPStatisticClv.TabIndex = 0;
             // 
-            // MTxtReadSuccess
+            // MTxtReadSingle
             // 
             // 
             // 
             // 
-            this.MTxtReadSuccess.CustomButton.Image = null;
-            this.MTxtReadSuccess.CustomButton.Location = new System.Drawing.Point(213, 1);
-            this.MTxtReadSuccess.CustomButton.Name = "";
-            this.MTxtReadSuccess.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.MTxtReadSuccess.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MTxtReadSuccess.CustomButton.TabIndex = 1;
-            this.MTxtReadSuccess.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.MTxtReadSuccess.CustomButton.UseSelectable = true;
-            this.MTxtReadSuccess.CustomButton.Visible = false;
-            this.MTxtReadSuccess.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MTxtReadSuccess.Lines = new string[] {"0"};
-            this.MTxtReadSuccess.Location = new System.Drawing.Point(123, 3);
-            this.MTxtReadSuccess.MaxLength = 32767;
-            this.MTxtReadSuccess.Name = "MTxtReadSuccess";
-            this.MTxtReadSuccess.PasswordChar = '\0';
-            this.MTxtReadSuccess.ReadOnly = true;
-            this.MTxtReadSuccess.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.MTxtReadSuccess.SelectedText = "";
-            this.MTxtReadSuccess.SelectionLength = 0;
-            this.MTxtReadSuccess.SelectionStart = 0;
-            this.MTxtReadSuccess.ShortcutsEnabled = true;
-            this.MTxtReadSuccess.Size = new System.Drawing.Size(233, 21);
-            this.MTxtReadSuccess.TabIndex = 1;
-            this.MTxtReadSuccess.Text = "0";
-            this.MTxtReadSuccess.UseSelectable = true;
-            this.MTxtReadSuccess.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
-            this.MTxtReadSuccess.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.MTxtReadSingle.CustomButton.Image = null;
+            this.MTxtReadSingle.CustomButton.Location = new System.Drawing.Point(213, 1);
+            this.MTxtReadSingle.CustomButton.Name = "";
+            this.MTxtReadSingle.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.MTxtReadSingle.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MTxtReadSingle.CustomButton.TabIndex = 1;
+            this.MTxtReadSingle.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.MTxtReadSingle.CustomButton.UseSelectable = true;
+            this.MTxtReadSingle.CustomButton.Visible = false;
+            this.MTxtReadSingle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MTxtReadSingle.Lines = new string[] {
+        "0"};
+            this.MTxtReadSingle.Location = new System.Drawing.Point(123, 3);
+            this.MTxtReadSingle.MaxLength = 32767;
+            this.MTxtReadSingle.Name = "MTxtReadSingle";
+            this.MTxtReadSingle.PasswordChar = '\0';
+            this.MTxtReadSingle.ReadOnly = true;
+            this.MTxtReadSingle.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.MTxtReadSingle.SelectedText = "";
+            this.MTxtReadSingle.SelectionLength = 0;
+            this.MTxtReadSingle.SelectionStart = 0;
+            this.MTxtReadSingle.ShortcutsEnabled = true;
+            this.MTxtReadSingle.Size = new System.Drawing.Size(233, 21);
+            this.MTxtReadSingle.TabIndex = 1;
+            this.MTxtReadSingle.Text = "0";
+            this.MTxtReadSingle.UseSelectable = true;
+            this.MTxtReadSingle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.MTxtReadSingle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // MTxtReadRate
+            // MTxtReadMulti
             // 
             // 
             // 
             // 
-            this.MTxtReadRate.CustomButton.Image = null;
-            this.MTxtReadRate.CustomButton.Location = new System.Drawing.Point(214, 2);
-            this.MTxtReadRate.CustomButton.Name = "";
-            this.MTxtReadRate.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.MTxtReadRate.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.MTxtReadRate.CustomButton.TabIndex = 1;
-            this.MTxtReadRate.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.MTxtReadRate.CustomButton.UseSelectable = true;
-            this.MTxtReadRate.CustomButton.Visible = false;
-            this.MTxtReadRate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MTxtReadRate.Lines = new string[] {"100"};
-            this.MTxtReadRate.Location = new System.Drawing.Point(482, 30);
-            this.MTxtReadRate.MaxLength = 32767;
-            this.MTxtReadRate.Name = "MTxtReadRate";
-            this.MTxtReadRate.PasswordChar = '\0';
-            this.MTxtReadRate.ReadOnly = true;
-            this.MTxtReadRate.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.MTxtReadRate.SelectedText = "";
-            this.MTxtReadRate.SelectionLength = 0;
-            this.MTxtReadRate.SelectionStart = 0;
-            this.MTxtReadRate.ShortcutsEnabled = true;
-            this.MTxtReadRate.Size = new System.Drawing.Size(234, 22);
-            this.MTxtReadRate.TabIndex = 1;
-            this.MTxtReadRate.Text = "100";
-            this.MTxtReadRate.UseSelectable = true;
-            this.MTxtReadRate.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
-            this.MTxtReadRate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.MTxtReadMulti.CustomButton.Image = null;
+            this.MTxtReadMulti.CustomButton.Location = new System.Drawing.Point(214, 2);
+            this.MTxtReadMulti.CustomButton.Name = "";
+            this.MTxtReadMulti.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.MTxtReadMulti.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MTxtReadMulti.CustomButton.TabIndex = 1;
+            this.MTxtReadMulti.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.MTxtReadMulti.CustomButton.UseSelectable = true;
+            this.MTxtReadMulti.CustomButton.Visible = false;
+            this.MTxtReadMulti.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MTxtReadMulti.Lines = new string[] {
+        "0"};
+            this.MTxtReadMulti.Location = new System.Drawing.Point(482, 30);
+            this.MTxtReadMulti.MaxLength = 32767;
+            this.MTxtReadMulti.Name = "MTxtReadMulti";
+            this.MTxtReadMulti.PasswordChar = '\0';
+            this.MTxtReadMulti.ReadOnly = true;
+            this.MTxtReadMulti.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.MTxtReadMulti.SelectedText = "";
+            this.MTxtReadMulti.SelectionLength = 0;
+            this.MTxtReadMulti.SelectionStart = 0;
+            this.MTxtReadMulti.ShortcutsEnabled = true;
+            this.MTxtReadMulti.Size = new System.Drawing.Size(234, 22);
+            this.MTxtReadMulti.TabIndex = 1;
+            this.MTxtReadMulti.Text = "0";
+            this.MTxtReadMulti.UseSelectable = true;
+            this.MTxtReadMulti.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.MTxtReadMulti.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // MLReadRateClv
             // 
@@ -322,7 +327,7 @@
             this.MLReadRateClv.Name = "MLReadRateClv";
             this.MLReadRateClv.Size = new System.Drawing.Size(114, 28);
             this.MLReadRateClv.TabIndex = 0;
-            this.MLReadRateClv.Text = "读取比率";
+            this.MLReadRateClv.Text = "多个条码";
             this.MLReadRateClv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MLReadSuccessClv
@@ -332,7 +337,7 @@
             this.MLReadSuccessClv.Name = "MLReadSuccessClv";
             this.MLReadSuccessClv.Size = new System.Drawing.Size(114, 27);
             this.MLReadSuccessClv.TabIndex = 0;
-            this.MLReadSuccessClv.Text = "读取成功";
+            this.MLReadSuccessClv.Text = "单个条码";
             this.MLReadSuccessClv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MLReadFailClv
@@ -360,7 +365,8 @@
             this.MTxtReadFail.CustomButton.UseSelectable = true;
             this.MTxtReadFail.CustomButton.Visible = false;
             this.MTxtReadFail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MTxtReadFail.Lines = new string[] {"0"};
+            this.MTxtReadFail.Lines = new string[] {
+        "0"};
             this.MTxtReadFail.Location = new System.Drawing.Point(482, 3);
             this.MTxtReadFail.MaxLength = 32767;
             this.MTxtReadFail.Name = "MTxtReadFail";
@@ -375,7 +381,7 @@
             this.MTxtReadFail.TabIndex = 1;
             this.MTxtReadFail.Text = "0";
             this.MTxtReadFail.UseSelectable = true;
-            this.MTxtReadFail.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
+            this.MTxtReadFail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.MTxtReadFail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // MLReadTotalClv
@@ -403,7 +409,8 @@
             this.MTxtReadTotal.CustomButton.UseSelectable = true;
             this.MTxtReadTotal.CustomButton.Visible = false;
             this.MTxtReadTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MTxtReadTotal.Lines = new string[] {"0"};
+            this.MTxtReadTotal.Lines = new string[] {
+        "0"};
             this.MTxtReadTotal.Location = new System.Drawing.Point(123, 30);
             this.MTxtReadTotal.MaxLength = 32767;
             this.MTxtReadTotal.Name = "MTxtReadTotal";
@@ -418,7 +425,7 @@
             this.MTxtReadTotal.TabIndex = 1;
             this.MTxtReadTotal.Text = "0";
             this.MTxtReadTotal.UseSelectable = true;
-            this.MTxtReadTotal.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
+            this.MTxtReadTotal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.MTxtReadTotal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // GBoxCommSetting
@@ -483,7 +490,7 @@
             this.MTxtIPPort.TabIndex = 1;
             this.MTxtIPPort.UseCustomBackColor = true;
             this.MTxtIPPort.UseSelectable = true;
-            this.MTxtIPPort.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
+            this.MTxtIPPort.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.MTxtIPPort.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.MTxtIPPort.Click += new System.EventHandler(this.MTxtIPPort_Click);
             // 
@@ -539,7 +546,7 @@
             this.MTxtIPAddr.TabIndex = 1;
             this.MTxtIPAddr.UseCustomBackColor = true;
             this.MTxtIPAddr.UseSelectable = true;
-            this.MTxtIPAddr.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
+            this.MTxtIPAddr.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.MTxtIPAddr.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.MTxtIPAddr.Click += new System.EventHandler(this.MTxtIPAddr_Click);
             // 
@@ -586,8 +593,8 @@
             this.ClientSize = new System.Drawing.Size(1097, 677);
             this.Controls.Add(this.MPClv);
             this.Controls.Add(this.GBoxRunLog);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (134)));
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(14, 65, 14, 22);
@@ -597,7 +604,7 @@
             this.GBoxRunLog.ResumeLayout(false);
             this.MPClv.ResumeLayout(false);
             this.GBoxResultClv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.MGClv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MGClv)).EndInit();
             this.MPInfoClv.ResumeLayout(false);
             this.GBoxStatisticClv.ResumeLayout(false);
             this.TLPStatisticClv.ResumeLayout(false);
@@ -605,6 +612,7 @@
             this.TLPCommSetting.ResumeLayout(false);
             this.TLPCommSetting.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -620,8 +628,8 @@
         private MetroFramework.Controls.MetroPanel MPInfoClv;
         private System.Windows.Forms.GroupBox GBoxStatisticClv;
         private System.Windows.Forms.TableLayoutPanel TLPStatisticClv;
-        private MetroFramework.Controls.MetroTextBox MTxtReadSuccess;
-        private MetroFramework.Controls.MetroTextBox MTxtReadRate;
+        private MetroFramework.Controls.MetroTextBox MTxtReadSingle;
+        private MetroFramework.Controls.MetroTextBox MTxtReadMulti;
         private MetroFramework.Controls.MetroLabel MLReadRateClv;
         private MetroFramework.Controls.MetroLabel MLReadSuccessClv;
         private MetroFramework.Controls.MetroLabel MLReadFailClv;

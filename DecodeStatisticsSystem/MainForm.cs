@@ -24,10 +24,11 @@ namespace DecodeStatisticsSystem
 
         private string m_NetworkHost;
         private ushort m_NetworkPort;
-        private long m_ReadFail;
 
-        private double m_ReadRate;
-        private long m_ReadSuccess;
+
+        private long m_ReadMulti;
+        private long m_ReadFail;
+        private long m_ReadSingle;
         private long m_ReadTotal;
 
         public MainForm()
@@ -108,19 +109,19 @@ namespace DecodeStatisticsSystem
                             if (message.Trim().Length == 0)
                                 throw new Exception("The length of valid data is zero");
 
-
-                            var array = message.Split('_');
-                            var sendTime = array[1];
-                            var sendCode = array[2];
-
-                            if (sendCode == m_FailFlag)
-                                m_ReadFail++;
+                            if (message == this.m_FailFlag)
+                                this.m_ReadFail++;
                             else
-                                m_ReadSuccess++;
-
+                            {
+                                if (message.Contains(";"))
+                                    this.m_ReadMulti++;
+                                else
+                                    this.m_ReadSingle++;
+                            }
                             m_ReadTotal++;
 
-                            m_ReadRate = m_ReadSuccess * 100.0 / m_ReadTotal;
+                            var sendTime = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+                            var sendCode = message;
 
                             // 界面显示数据
                             MGClv.BeginInvoke(new Action<string, string>(AddDataToMetroGrid), sendTime, sendCode);
@@ -157,10 +158,11 @@ namespace DecodeStatisticsSystem
         {
             try
             {
-                MTxtReadFail.Text = m_ReadFail.ToString();
+                MTxtReadFail.Text = this.m_ReadFail.ToString();
                 MTxtReadTotal.Text = m_ReadTotal.ToString();
-                MTxtReadRate.Text = m_ReadRate.ToString("F2");
-                MTxtReadSuccess.Text = m_ReadSuccess.ToString();
+                MTxtReadMulti.Text = this.m_ReadMulti.ToString();
+                MTxtReadSingle.Text = m_ReadSingle.ToString();
+
                 if (MGClv.Rows.Count > 200)
                 {
                     MGClv.Rows.Clear();
